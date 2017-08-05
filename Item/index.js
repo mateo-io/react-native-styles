@@ -11,29 +11,27 @@ import PriceTag from './PriceTag';
 
 
 export default class Item extends React.Component {
+
   render() {
+    const { brand, image, name, price, discount, ...rest } = this.props;
     return(
       <Container>
-        <CloseIcon source={require('./assets/closeIcon.png')} />
-        <ItemImage source={require('./assets/shirt.jpg')} />
+        <ItemImage source={image} />
 
         <BrandName>
-          brand name
+          {brand}
         </BrandName>
 
         <ItemTitle>
-          SONTAG POCKET SHIRTS - KHAKI
+          {name}
         </ItemTitle>
 
-        <PriceTag text='43,700won [5%]' />
+        <PriceTag text={`${price} [${discount}]`} />
 
         <Divider />
 
         <Description
-          code='120476'
-          milage='437 point'
-          delivery='집회·결사의 자유. 헌법개更(리위원 3,000) WEQS'
-          origin='국무총年'
+          {...rest}
         />
 
       </Container>
@@ -55,16 +53,6 @@ const ItemTitle = styled.Text`
   font-weight: 500;
   color: ${slateGrey};
   line-height: 25px;
-`
-
-const CloseIcon = styled.Image`
-  top: 20px;
-  left: 20px;
-  height: 30px;
-  width: 30px;
-  position: absolute;
-  z-index: 2;
-  align-self: flex-start;
 `
 
 const ItemImage = styled.Image`

@@ -24,7 +24,7 @@ const windowsBlue = '#3d73bd'
 
 const RootContainer = styled.View`
   margin-top: 10;
-  margin-bottom: : 10;
+  margin-bottom: 10;
   flex-direction: row;
   align-items: center;
 `

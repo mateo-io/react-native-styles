@@ -26,7 +26,7 @@ export default class Item extends React.Component {
           {name}
         </ItemTitle>
 
-        <PriceTag text={`${price} [${discount}]`} />
+        <PriceTag price={price} discount={discount} />
 
         <Divider />
 
@@ -44,25 +44,26 @@ const windowsBlue = '#3d73bd'
 
 
 const BrandName = styled.Text`
+  padding-top: 10;
   color: ${slateGrey}
 `
 
 const ItemTitle = styled.Text`
-  padding-top: 10px;
+  padding-top: 10;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 700;
   color: ${slateGrey};
   line-height: 25px;
 `
 
 const ItemImage = styled.Image`
+  position: relative;
   height: 250px;
-  width: 250px;
+  width: 300px;
   align-self: center;
 `
 
 
 const Container = styled.View`
-  flex: 1;
-  padding: 10px 30px 0px 30px;
+  padding: 15px 30px 0px 30px;
 `

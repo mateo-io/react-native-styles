@@ -3,16 +3,18 @@ import styled from 'styled-components/native';
 import { StyleSheet, Text, Image, View } from 'react-native';
 
 
-const PriceTag = ({text}) => (
+const PriceTag = ({price, discount}) => (
   <RootContainer>
 
-    <PriceTagImageContainer>
-      <Image source={require('./assets/tagIcon.png')} />
-    </PriceTagImageContainer>
+    <Image source={require('./assets/tagIcon.png')} />
 
     <PriceTagText>
-      {text}
+      {price}
     </PriceTagText>
+
+    <DiscountText>
+      [{discount}]
+    </DiscountText>
 
   </RootContainer>
 )
@@ -21,19 +23,24 @@ const PriceTag = ({text}) => (
 const windowsBlue = '#3d73bd'
 
 const RootContainer = styled.View`
-  margin-top: 10px;
+  margin-top: 10;
+  margin-bottom: : 10;
   flex-direction: row;
   align-items: center;
 `
 
-const PriceTagImageContainer = styled.View`
+const DiscountText = styled.Text`
+  color: ${windowsBlue};
+  padding-left: 10;
+  font-size: 16;
+  flex-direction: row;
 `
-
 
 const PriceTagText = styled.Text`
   color: ${windowsBlue};
-  padding-left: 10px;
-  font-size: 18px;
+  padding-left: 10;
+  font-weight: 500;
+  font-size: 18;
   flex-direction: row;
 `
 

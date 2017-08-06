@@ -15,10 +15,10 @@ export default class Description extends React.Component {
 
     return(
       <RootContainer>
-        <DescriptionItem attribute='CODE' value={code} />
-        <DescriptionItem attribute='MILAGE' value={milage} />
-        <DescriptionItem attribute='DELIVERY' value={delivery} />
-        <DescriptionItem attribute='ORIGIN' value={origin} />
+        <DescriptionItem key={0} attribute='CODE' value={code} />
+        <DescriptionItem key={1} attribute='MILAGE' value={milage} />
+        <DescriptionItem key={2} attribute='DELIVERY' value={delivery} />
+        <DescriptionItem key={3} attribute='ORIGIN' value={origin} />
       </RootContainer>
     )
   }
@@ -39,14 +39,14 @@ const InlineContainer = styled.View`
 
 const BoldText = styled.Text`
   font-weight: 400;
-  font-size: 18px;
-  letter-spacing: 10px;
+  font-size: 16;
+  letter-spacing: 10;
 `
 
 const DescriptionText  = styled.Text`
-  padding-left: 5px;
+  padding-left: 5;
   flex-basis: 70%;
-  font-size: 15px;
+  font-size: 15;
   align-self: flex-end;
   color: ${slateGrey};
 `
